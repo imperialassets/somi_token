@@ -13,7 +13,7 @@ const QUICKNODE_HTTP_URL = process.env.Mainnet;
 const PRIVATE_KEY = process.env.PRIVATE_KEY;
 
 const ETHERSCAN_KEY = process.env.ETHERSCAN_KEY;
-
+console.log(QUICKNODE_HTTP_URL)
 module.exports = {
   solidity: {
     compilers: [{
@@ -35,12 +35,13 @@ module.exports = {
       },
     }]},
 
+
   networks: {
     hardhat: {
-      chainId: 31337,
+      chainId: 56,
       gasPrice: "auto",
       forking: {
-        url:QUICKNODE_HTTP_URL,
+        url: 'https://rpc.ankr.com/bsc',
       }
     }, 
     // goerli: {
@@ -52,14 +53,16 @@ module.exports = {
     //   accounts: [`0x${process.env.PRIVATE_KEY}`],
     // },
     mainnet: {
-      url:QUICKNODE_HTTP_URL,
+      url: 'https://rpc.ankr.com/bsc',
       accounts: [PRIVATE_KEY],
       gasPrice: "auto",
     },
   },
+
   etherscan: {
     apiKey: ETHERSCAN_KEY,
   },
 };
 
 // npx hardhat verify --network mainnet 0xfB991Fa298B5899bc605FC4dA972d5cA582A75e4
+

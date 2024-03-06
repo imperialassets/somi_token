@@ -9,10 +9,10 @@ const hre = require("hardhat");
 async function main() {  
 
 const ImperialAssets = await ethers.getContractFactory("ImperialAssets")
+
 const ImpeAssets = await ImperialAssets.deploy();
 await ImpeAssets.deployed()
-console.log("ImperialAssets contract address", ImpeAssets.address);
-
+  console.log("ImperialAssets contract address", ImpeAssets.address);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
